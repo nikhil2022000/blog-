@@ -47,6 +47,7 @@ public function insert(Request $request){
   $model->secondery_contact_details = json_encode(array('spersonal_name'=>$spersonal_name, 'personal_email'=>$personal_email,'number'=>$number ,'relationship'=> $relationship));
   $model->save();
   return redirect()->back()->with('message', 'Data has Been submited Successfully');
+  
 }
 
 
