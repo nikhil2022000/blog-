@@ -26,7 +26,10 @@
                                                         <th>state</th>
                                                         <th>Address</th>
                                                         <th>Pincode</th>
-                                                        <th>secondery_contact_details</th>
+                                                        <th>personal_name</th>
+                                                        <th>personal_email</th>
+                                                        <th>number</th>
+                                                        <th>Relationship</th>
                                                         <!--<th>Delete</th>
                                                         <th>Edite</th>--->
                                                         
@@ -34,6 +37,12 @@
                                                 </thead>
                                                 <tbody>
                                                 @foreach ($data as $user)
+                                                  <?php      
+                                                    $data = $user->secondery_contact_details;
+                                                    $send=json_decode($data);
+                                                   //$personal= $data->spersonal_name;
+                                                   
+                                                  //echo"<pre>"; print_r($send); die;?>
                                                             <tr>
                                                                 <td>{{ $user->id }}</td>
                                                                 <td>{{ $user->first_name }}</td>
@@ -43,7 +52,11 @@
                                                                 <td>{{ $user->city }}</td>
                                                                 <td>{{ $user->state }}</td>
                                                                 <td>{{ $user->pincode }}</td>
-                                                                <td>{{ $user->secondery_contact_details }}</td>
+                                                                <td>{{ $send->spersonal_name }}</td>
+                                                                <td>{{ $send->personal_email }}</td>
+                                                                <td>{{ $send->number }}</td>
+                                                                <td>{{ $send->relationship }}</td>
+                                                            
                                                               <!---  <td><a href="delete/{{  $user->id}}" class="btn btn-primary" role="button">Delete</a></td>
                                                                 <td><a href="update/{{  $user->id}}" class="btn btn-primary" role="button">Update</a></td>-->
                                                             </tr>

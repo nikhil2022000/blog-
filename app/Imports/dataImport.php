@@ -15,7 +15,7 @@ class dataImport implements ToModel , WithHeadingRow
     */
     public function model(array $row)
     {
-        //echo"<pre>";print_r($row);die;
+        echo"<pre>";print_r($row);die;
         return new send([
             'first_name'=>$row['first_name'],
             'last_name'=>$row['last_name'],
@@ -25,7 +25,7 @@ class dataImport implements ToModel , WithHeadingRow
             'state'=>$row[ 'state'],
             'address'=>$row[ 'address'],
             'pincode'=>$row[ 'pincode'],
-            'secondery_contact_details'=>$row['spersonal_name'].'  '.$row['personal_email'].'  '.$row['number'].'  '.$row['relationship']
+            'secondery_contact_details'=> json_encode array($row['spersonal_name'].'  '.$row['personal_email'].'  '.$row['number'].'  '.$row['relationship']);
 
         ]);
     }
